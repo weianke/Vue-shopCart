@@ -63,7 +63,7 @@
           <div class="addr-list-wrap">
             <div class="addr-list">
               <ul>
-                <li v-for="(item, index) in filterAddress" :class="{'check': index == currentIndex}" @click="currentIndex=index">
+                <li v-for="(item,index) in filterAddress" v-bind:class="{'check': index == currentIndex}" @click="currentIndex=index">
                   <dl>
                     <dt>{{item.userName}}</dt>
                     <dd class="address">{{item.streetName}}</dd>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="shipping-addr-more">
-              <a class="addr-more-btn up-down-btn" href="javascript:" @click="limitNum=addressList.length">
+              <a class="addr-more-btn up-down-btn" href="javascript:" @click="limitNum = addressList.length">
                 more
                 <i class="i-up-down">
                   <i class="i-up-down-l"></i>
@@ -114,11 +114,11 @@
           <div class="shipping-method-wrap">
             <div class="shipping-method">
               <ul>
-                <li :class="{'check': shippingMethod == 1}" @click="shippingMethod = 1">
+                <li v-bind:class="{'check': shippingMethod==1}" @click="shippingMethod=1">
                   <div class="name">标准配送</div>
                   <div class="price">Free</div>
                 </li>
-                <li :class="{'check': shippingMethod == 2}" @click="shippingMethod = 2">
+                <li v-bind:class="{'check': shippingMethod==2}" @click="shippingMethod=2">
                   <div class="name">高级配送</div>
                   <div class="price">180</div>
                 </li>
